@@ -16,8 +16,7 @@ class Celular {
   String? capacidades;
 }
 
-void main () {
-
+void main() {
   Vehiculo carro = new Vehiculo();
   carro.marca = "Toyota";
   carro.peso_kg = 1200;
@@ -31,6 +30,6 @@ void main () {
   Celular xiaomi = new Celular();
   xiaomi.modelo = "redmi note 13c";
   xiaomi.precio = 600000;
-  xiaomi.capacidades = "128gb de rom, 4gb de ram, procesador mediaTek helio G85, 8 nucleos";
+  xiaomi.capacidades ="128gb de rom, 4gb de ram, procesador mediaTek helio G85, 8 nucleos";
 
 }
