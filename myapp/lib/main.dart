@@ -11,7 +11,7 @@ Future<Map<String,dynamic>> mapeo(String id) async {
   Map<String, dynamic> map = jsonDecode(response.body); 
   return map;
 
-}
+} 
 
 // ignore: must_be_immutable
 class Homes extends StatelessWidget{
