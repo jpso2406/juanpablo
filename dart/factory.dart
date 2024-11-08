@@ -1,11 +1,23 @@
 import 'dart:io';
 
 void main(){
-  
+
+  int opcion = 0;
+  print('Seleccione el tipo de transporte: 1. Terrestre 2. Maritimo');
+  print("-------------");
+  opcion = int.parse(stdin.readLineSync()!);
+  print("-------------");
+  opcion == 1 ? LogisticaTerrestre().planEntrega() : LogisticaMaritima().planEntrega();
+
 }
 
-  
+  void entrega(){
+    print('Entrega por tierra en una caja');
+  }
 
+  void entregamar(){
+    print('Entrega por mar en un contenedor');
+  }
 
 
 
