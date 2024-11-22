@@ -10,7 +10,7 @@ void main() {
   bool menordeedad  = e < 18;
   if(menordeedad){
     print("eres menor de edad");
-  }else{
+  }else
     print("eres mayor de edad");
   }
 
