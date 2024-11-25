@@ -1,13 +1,13 @@
 main {
            
-    height: 840px;
-    width: 1400px;
+    height: 800px;
+    width: 1200px;
     margin: auto;
 }
 header {
     border: 3px solid rgb(0, 0, 0);
     height: 180px;
-    width: 1400px;
+    width: 1200px;
     background-color: grey;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -15,12 +15,13 @@ header {
 nav {
     border: 3px solid rgb(11, 11, 15);
     height: 70px;
-    width: 1400px;
+    width: 1200px;
     margin-bottom: 20px;
     background-color: rgb(9, 102, 9);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     text-align: left;
+    float: center;
 
 }
 section {
@@ -28,7 +29,8 @@ section {
     width: 1400px;
     margin-bottom: 20px;
     float: left;
-    background-color: white;
+    background-color:white;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgy2yIVZI02cr5ByRATKVGxwhAiEws-9pWg&s);
 }
 .articulo1 {
     border: 3px solid rgb(0, 0, 0);
@@ -54,17 +56,21 @@ article {
 aside {
     border: 3px solid rgb(0, 0, 0);
     height: 490px;
-    width: 550px;
+    width: 380px;
     margin: auto;
     display: inline;
     float: right;
     background-color: rgb(27, 152, 94);
     border-radius: 20px;
+    margin-right: 150px;
+    text-align: center;
+    margin-left: 30px;
     
 }
 aside form {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 aside form label {
@@ -78,7 +84,7 @@ aside form select {
     margin-top: 5px;
     border-radius: 5px;
     border: none;
-    width: 300px;
+    width: 200px;
     margin-left: 100px;
 }
 
@@ -90,7 +96,7 @@ aside form button {
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
-    width: 300px;
+    width: 200px;
     margin-left: 100px;
     
 }
@@ -107,7 +113,7 @@ footer {
 .Textnav1 {
     color: white;
     padding-left: 50px;
-    padding-right: 70px;
+    padding-right: 30px;
     font-size: 25px;
     display: inline-block;
     border-right: 3px solid white;
@@ -117,44 +123,58 @@ footer {
 .Textnav2 {
     color: white;
     padding-left: 50px;
-    padding-right: 70px;
+    padding-right: 50px;
     font-size: 25px;
     display: inline-block;
     border-right: 3px solid white;
     margin-left: 30px;
-    margin-right: 80px;
+    margin-right: 50px;
 }
 .Textnav3 {
     color: white;
-    padding-left: 50px;
-    padding-right: 70px;
+    padding-left: 20px;
+    padding-right: 50px;
     font-size: 25px;
     display: inline-block;
     border-right: 3px solid white;
     margin-left: 30px;
-    margin-right: 80px;
+    margin-right: 20px;
+    
 }
 .Textnav4 {
     color: white;
-    padding-left: 50px;
-    padding-right: 70px;
+    padding-left: 100px;
+    padding-right: 50px;
     font-size: 25px;
     display: inline-block;
+    margin-left: 400px;
+    margin: -100px;
+   
+    
 }
 .textheader1 {
-    color: black;
-    font-size: 35px;
+    color:black;
+    font-size: 30px;
     margin-left: 180px;
     margin-right: 100px;
+   
+    text-align: 100px ;
+
 }
 .textheader2 {
     color: black;
-    font-size: 60px;
-    margin-left: 300px;
-    margin-right: 100px;
+    font-size: 40px;
+    margin-left: 100px;
+    margin-right: 100px;    
+    margin-top: 50px;
 }
 
-
+.meme{
+    border: 1px solid black;
+    max-width: 200px;
+    margin-right: 100px ;
+    max-height: 200px;
+}
 
 .perroblanco{
     border: 3px solid black;
@@ -165,4 +185,6 @@ footer {
 
 }
 
-
+body{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgy2yIVZI02cr5ByRATKVGxwhAiEws-9pWg&s);
+}
