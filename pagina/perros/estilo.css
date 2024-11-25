@@ -1,0 +1,149 @@
+main {
+           
+    height: 840px;
+    width: 1400px;
+    margin: auto;
+}
+header {
+    border: 3px solid rgb(0, 0, 0);
+    height: 180px;
+    width: 1400px;
+    background-color: grey;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+nav {
+    border: 3px solid rgb(11, 11, 15);
+    height: 70px;
+    width: 1400px;
+    margin-bottom: 20px;
+    background-color: rgb(9, 102, 9);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: left;
+
+}
+section {
+    height: 500px;
+    width: 1400px;
+    margin-bottom: 20px;
+    float: left;
+    background-color: white;
+}
+.articulo1 {
+    border: 3px solid rgb(0, 0, 0);
+    height: 240px;
+    width: 800px;
+    margin-bottom: 10px;
+    float: left;
+    display: inline;
+    background-color: #fffa99;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+article {
+    border: 3px solid rgb(0, 0, 0);
+    height: 240px;
+    width: 800px;
+    margin: auto;
+    float: left;
+    display: inline;
+    background-color: #fffa99;
+    border-radius: 20px;
+}
+aside {
+    border: 3px solid rgb(0, 0, 0);
+    height: 490px;
+    width: 550px;
+    margin: auto;
+    display: inline;
+    float: right;
+    background-color: rgb(27, 152, 94);
+    border-radius: 20px;
+}
+aside form {
+    display: flex;
+    flex-direction: column;
+}
+
+aside form label {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+aside form input,
+aside form select {
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+aside form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fffa99;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    border: 3px solid rgb(0, 0, 0);
+    clear: both;
+    height: 110px;
+    margin: auto;
+    background-color: rgb(7, 109, 7);
+    border-radius: 20px;
+    text-align: center;
+}
+.Textnav1 {
+    color: white;
+    padding-left: 50px;
+    padding-right: 70px;
+    font-size: 25px;
+    display: inline-block;
+    border-right: 3px solid white;
+    margin-left: 30px;
+    margin-right: 80px;
+}
+.Textnav2 {
+    color: white;
+    padding-left: 50px;
+    padding-right: 70px;
+    font-size: 25px;
+    display: inline-block;
+    border-right: 3px solid white;
+    margin-left: 30px;
+    margin-right: 80px;
+}
+.Textnav3 {
+    color: white;
+    padding-left: 50px;
+    padding-right: 70px;
+    font-size: 25px;
+    display: inline-block;
+    border-right: 3px solid white;
+    margin-left: 30px;
+    margin-right: 80px;
+}
+.Textnav4 {
+    color: white;
+    padding-left: 50px;
+    padding-right: 70px;
+    font-size: 25px;
+    display: inline-block;
+}
+.textheader1 {
+    color: black;
+    font-size: 35px;
+    margin-left: 180px;
+    margin-right: 100px;
+}
+.textheader2 {
+    color: black;
+    font-size: 60px;
+    margin-left: 300px;
+    margin-right: 100px;
+}
