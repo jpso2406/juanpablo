@@ -60,6 +60,7 @@ aside {
     float: right;
     background-color: rgb(27, 152, 94);
     border-radius: 20px;
+    
 }
 aside form {
     display: flex;
@@ -77,6 +78,8 @@ aside form select {
     margin-top: 5px;
     border-radius: 5px;
     border: none;
+    width: 300px;
+    margin-left: 100px;
 }
 
 aside form button {
@@ -87,6 +90,9 @@ aside form button {
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
+    width: 300px;
+    margin-left: 100px;
+    
 }
 
 footer {
@@ -147,3 +153,16 @@ footer {
     margin-left: 300px;
     margin-right: 100px;
 }
+
+
+
+.perroblanco{
+    border: 3px solid black;
+    border-radius: 30px;
+    margin-right: 20px;
+    height: 100px;
+    
+
+}
+
+
