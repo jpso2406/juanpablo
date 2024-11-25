@@ -5,7 +5,7 @@ main {
     margin: auto;
 }
 header {
-    border: 3px solid rgb(0, 0, 0);
+   
     height: 180px;
     width: 1200px;
     background-color: grey;
@@ -13,24 +13,25 @@ header {
     border-top-right-radius: 20px;
 }
 nav {
-    border: 3px solid rgb(11, 11, 15);
+  
     height: 70px;
     width: 1200px;
     margin-bottom: 20px;
     background-color: rgb(9, 102, 9);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    text-align: left;
+    text-align: right;
     float: center;
 
 }
 section {
     height: 500px;
     width: 1400px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     float: left;
     background-color:white;
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgy2yIVZI02cr5ByRATKVGxwhAiEws-9pWg&s);
+    margin-right: 300px;
 }
 .articulo1 {
     border: 3px solid rgb(0, 0, 0);
@@ -42,6 +43,7 @@ section {
     background-color: #fffa99;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    padding-left: 20px;
 }
 article {
     border: 3px solid rgb(0, 0, 0);
@@ -52,19 +54,20 @@ article {
     display: inline;
     background-color: #fffa99;
     border-radius: 20px;
+    padding-left: 20px;
 }
 aside {
     border: 3px solid rgb(0, 0, 0);
     height: 490px;
-    width: 380px;
+    width: 350px;
     margin: auto;
     display: inline;
     float: right;
     background-color: rgb(27, 152, 94);
     border-radius: 20px;
-    margin-right: 150px;
+    margin-right: 196px;
     text-align: center;
-    margin-left: 30px;
+    
     
 }
 aside form {
@@ -132,23 +135,27 @@ footer {
 }
 .Textnav3 {
     color: white;
-    padding-left: 20px;
-    padding-right: 50px;
+    padding-left: 10px;
+    padding-right: 70px;
     font-size: 25px;
     display: inline-block;
     border-right: 3px solid white;
     margin-left: 30px;
     margin-right: 20px;
     
+    
 }
 .Textnav4 {
     color: white;
     padding-left: 100px;
-    padding-right: 50px;
+    padding-right: 100px;
     font-size: 25px;
     display: inline-block;
-    margin-left: 400px;
-    margin: -100px;
+    margin-left: 100px;
+    margin: -150px;
+    border: 1px solid black;
+    margin: right -4px;
+    padding-right: 0px;
    
     
 }
