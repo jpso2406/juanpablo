@@ -12,7 +12,7 @@ table {
   }
   
   th {
-    background-color: #4CAF50; 
+    background-color: blue; 
     color: white; 
   }
   
@@ -31,11 +31,27 @@ main{
     height: 400px;
 }
 button{
-    
+    color: white;
+    background-color: blue;
+    transition: all;
+    margin-top: 10px;
+    width: 100px;
+
 }
 footer{
     border: 1px solid;
     margin:auto;
     width: 100px;
     margin-top: 25px;
+}
+section{
+   
+    width: 70px;
+    margin: auto;
+    margin-top: 10px;
+
+}
+input{
+    width: 100px;
+    border-radius: 5px;
 }
