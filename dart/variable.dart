@@ -2,7 +2,6 @@ import 'dart:io';
 
 void main() {
   print("escriber tu nombre");
-  String n = stdin.readLineSync()!;
   print("escriber tu edad");
   int e = int.parse(stdin.readLineSync()!);
   double promedio = ( e/ 2);
@@ -15,4 +14,4 @@ void main() {
   }
 
   
-}
+
