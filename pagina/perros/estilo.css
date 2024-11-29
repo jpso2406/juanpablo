@@ -30,7 +30,6 @@ section {
     margin-bottom: 10px;
     float: left;
     background-color:white;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgy2yIVZI02cr5ByRATKVGxwhAiEws-9pWg&s);
     margin-right: 300px;
 }
 .articulo1 {
@@ -150,12 +149,12 @@ footer {
     padding-left: 100px;
     padding-right: 100px;
     font-size: 25px;
-    display: inline-block;
     margin-left: 100px;
     margin: -150px;
-    border: 1px solid black;
+    float: right;
     margin: right -4px;
     padding-right: 0px;
+    margin-top: auto;
    
     
 }
@@ -192,6 +191,4 @@ footer {
 
 }
 
-body{
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgy2yIVZI02cr5ByRATKVGxwhAiEws-9pWg&s);
-}
+
