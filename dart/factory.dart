@@ -9,7 +9,7 @@ void main(){
   print("-------------");
   opcion == 1 ? LogisticaTerrestre().planEntrega() : LogisticaMaritima().planEntrega();
 
-}
+  
 
   void entrega(){
     print('Entrega por tierra en una caja');
@@ -19,11 +19,12 @@ void main(){
     print('Entrega por mar en un contenedor');
   }
 
-
+}
 
 
 abstract class transporte{
   void entrega();
+
 }
 
 class camion extends transporte{
