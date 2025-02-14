@@ -1,0 +1,23 @@
+/* Definimos la animación con @keyframes */
+@keyframes mover {
+    0% {
+        transform: translateX(0);
+        background-color: red;
+    }
+    50% {
+        transform: translateX(300px);
+        background-color: yellow;
+    }
+    100% {
+        transform: translateX(0);
+        background-color: green;
+    }
+}
+
+/* Estilo para el div */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation: mover 3s ease-in-out infinite; /* Animación aplicada */
+}
