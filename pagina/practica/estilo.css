@@ -1,23 +1,29 @@
-/* Definimos la animación con @keyframes */
-@keyframes mover {
-    0% {
-        transform: translateX(0);
-        background-color: red;
-    }
-    50% {
-        transform: translateX(300px);
-        background-color: yellow;
-    }
-    100% {
-        transform: translateX(0);
-        background-color: green;
-    }
+main{
+    border: 2px solid;
+    border-color: #000 #000 #000 #000;
+    margin: 10px;
+    height: 800px;
 }
+header{
+    border:  1px solid black;
+    margin: 500px;
+    height: 500px;
+    margin-top: 400px;
+    position: relative;
+    top: auto;
+    right: 480px;
+    margin-top: 20px;
+    border-radius: 30px;
+    @keyframes moverDerecha {
+        0%{
+            transform: translatex(0);
+        }
+        100%{
+            transform: translatex(300px);
+        }
+        
+    }
 
-/* Estilo para el div */
-.box {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    animation: mover 3s ease-in-out infinite; /* Animación aplicada */
+    
+    
 }

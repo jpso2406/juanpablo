@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animación en HTML</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animación Fácil con HTML, CSS y JS</title>
+  <style>
+    /* Estilo base para el cuerpo */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+    }
+
+    /* Estilo del cuadro */
+    .cuadro {
+      width: 150px;
+      height: 150px;
+      background-color: coral;
+      transition: transform 2s ease, background-color 2s ease;
+    }
+
+    /* Animación para mover el cuadro */
+    @keyframes mover {
+      0% {
+        transform: translateX(0);
+        background-color: coral;
+      }
+      50% {
+        transform: translateX(200px);
+        background-color: lightgreen;
+      }
+      100% {
+        transform: translateX(0);
+        background-color: coral;
+      }
+    }
+
+    /* Estilo del botón */
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Activar animación con la clase activa */
+    .activo {
+      animation: mover 2s ease-in-out infinite;
+    }
+  </style>
 </head>
 <body>
-    <div class="box"></div>
+  <div class="cuadro" id="miCuadro"></div>
+  <button id="animarBtn">Iniciar Animación</button>
+
+  <script>
+    // Obtener el elemento del cuadro y el botón
+    const cuadro = document.getElementById('miCuadro');
+    const boton = document.getElementById('animarBtn');
+
+    // Función para iniciar la animación
+    boton.addEventListener('click', function() {
+      cuadro.classList.toggle('activo');  // Alterna la clase para iniciar/detener la animación
+    });
+  </script>
 </body>
 </html>
