@@ -11,7 +11,7 @@ class SuccessWidget extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFF2196F3), Color(0xFF64B5F6)],
+          colors: [Color(0xFF7B1FA2), Color(0xFFE91E63)], // Morado → Rosa
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -38,15 +38,15 @@ class SuccessWidget extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 26,
-                        backgroundColor: Colors.blueAccent.withOpacity(0.2),
+                        backgroundColor: Colors.pinkAccent.withOpacity(0.2),
                         child: const Icon(Icons.person,
-                            color: Colors.blueAccent, size: 30),
+                            color: Colors.pinkAccent, size: 30),
                       ),
                       const SizedBox(width: 14),
                       Text(
                         "ID: ${user.id ?? ''}",
                         style: const TextStyle(
-                          color: Colors.blueAccent,
+                          color: Colors.deepPurple,
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
                         ),
@@ -70,7 +70,7 @@ class SuccessWidget extends StatelessWidget {
                   Row(
                     children: [
                       const Icon(Icons.email_outlined,
-                          color: Colors.grey, size: 18),
+                          color: Colors.deepOrange, size: 18),
                       const SizedBox(width: 6),
                       Expanded(
                         child: Text(

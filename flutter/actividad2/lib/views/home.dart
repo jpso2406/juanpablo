@@ -15,8 +15,8 @@ class HomeView extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsetsGeometry.symmetric(horizontal: 20, vertical: 60),
-            child: Image.asset(''),
+            padding: EdgeInsetsGeometry.symmetric(horizontal: 20, vertical: 10),
+            child: Image.asset('assets/carro.png',width: double.infinity,height: 250,fit: BoxFit.cover,),
           ),
           Text('Bienvenido $nombre', style: TextStyle(fontSize: 24),),
           SizedBox(height: 30),

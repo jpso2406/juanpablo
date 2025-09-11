@@ -1,7 +1,7 @@
-// ignore: file_names
-import 'package:actividad2/features/login/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:actividad2/features/login/bloc/login_bloc.dart';
 
 class InitialWidget extends StatelessWidget {
   final TextEditingController cedulaController = TextEditingController();
@@ -11,129 +11,138 @@ class InitialWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return Scaffold(
-      // Fondo degradado
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF2196F3), Color(0xFF64B5F6)],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+            colors: isDark
+                ? [Colors.deepPurple.shade900, Colors.purple.shade700]
+                : [const Color(0xFF8E24AA), const Color(0xFFF06292)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
         ),
         child: Center(
-          child: Card(
-            elevation: 12,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            color: Colors.white.withOpacity(0.95),
-            margin: const EdgeInsets.symmetric(horizontal: 24),
-            child: Padding(
-              padding: const EdgeInsets.all(28.0),
+          child: SingleChildScrollView(
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 600),
+              curve: Curves.easeOut,
+              margin: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.all(28),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.black.withOpacity(0.8)
+                    : Colors.white.withOpacity(0.9),
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.15),
+                    blurRadius: 25,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.lock_outline, size: 60, color: Colors.blueAccent),
-                  const SizedBox(height: 16),
-
-                  Text(
-                    "Iniciar Sesión",
-                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blueAccent,
-                        ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 32),
-
-                  // Campo de Cédula
-                  TextField(
-                    maxLength: 10,
-                    cursorColor: Colors.blueAccent,
-                    controller: cedulaController,
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: "Cédula",
-                      prefixIcon: const Icon(Icons.badge_outlined),
-                      filled: true,
-                      fillColor: Colors.blue.shade50,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                            color: Colors.blueAccent, width: 2),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      counterText: "", // quita el contador de caracteres
+                  Hero(
+                    tag: "logo",
+                    child: CircleAvatar(
+                      radius: 45,
+                      backgroundColor: Colors.purple.shade100,
+                      child: const Icon(Icons.lock_outline,
+                          size: 50, color: Colors.purple),
                     ),
                   ),
                   const SizedBox(height: 20),
-
-                  // Campo de Nombre
-                  TextField(
-                    cursorColor: Colors.blueAccent,
-                    controller: nombreController,
-                    decoration: InputDecoration(
-                      labelText: "Nombre",
-                      prefixIcon: const Icon(Icons.person_outline),
-                      filled: true,
-                      fillColor: Colors.blue.shade50,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                            color: Colors.blueAccent, width: 2),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
+                  Text(
+                    "Bienvenido",
+                    style: GoogleFonts.poppins(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple,
                     ),
                   ),
-                  const SizedBox(height: 28),
+                  const SizedBox(height: 35),
 
-                  // Botón
+                  // Campo Cédula
+                  _buildFancyTextField(
+                    label: "Cédula",
+                    icon: Icons.badge_outlined,
+                    controller: cedulaController,
+                    keyboardType: TextInputType.number,
+                    maxLength: 10,
+                  ),
+                  const SizedBox(height: 22),
+
+                  // Campo Nombre
+                  _buildFancyTextField(
+                    label: "Nombre",
+                    icon: Icons.person_outline,
+                    controller: nombreController,
+                  ),
+                  const SizedBox(height: 32),
+
+                  // Botón con gradiente
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        final cedulaText = cedulaController.text.trim();
-                        final nombre = nombreController.text.trim();
-
-                        if (cedulaText.isEmpty || nombre.isEmpty) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text('Todos los campos son obligatorios')),
-                          );
-                          return;
-                        }
-
-                        if (cedulaText.length < 8 || nombre.length < 3) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text("Por favor ingrese datos válidos")),
-                          );
-                          return;
-                        }
-
-                        final cedula = int.tryParse(cedulaText) ?? 0;
-                        context
-                            .read<LoginBloc>()
-                            .add(CreateUserEvent(cedula: cedula, nombre: nombre));
-                      },
-                      icon: const Icon(Icons.person_add, color: Colors.white),
-                      label: const Text(
-                        "Crear Usuario",
-                        style: TextStyle(color: Colors.white),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFFF06292), Color(0xFF8E24AA)],
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.purple.withOpacity(0.3),
+                            blurRadius: 10,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
                       ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueAccent,
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 18, horizontal: 24),
-                        textStyle: const TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w600),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          final cedulaText = cedulaController.text.trim();
+                          final nombre = nombreController.text.trim();
+
+                          if (cedulaText.isEmpty || nombre.isEmpty) {
+                            _showSnack(context,
+                                'Todos los campos son obligatorios');
+                            return;
+                          }
+
+                          if (cedulaText.length < 8 || nombre.length < 3) {
+                            _showSnack(context,
+                                'Por favor ingrese datos válidos');
+                            return;
+                          }
+
+                          final cedula = int.tryParse(cedulaText) ?? 0;
+                          context.read<LoginBloc>().add(
+                                CreateUserEvent(
+                                    cedula: cedula, nombre: nombre),
+                              );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          shadowColor: Colors.transparent,
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 32),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            Icon(Icons.person_add, color: Colors.white),
+                            SizedBox(width: 8),
+                            Text("Crear Usuario",
+                                style: TextStyle(color: Colors.white)),
+                          ],
                         ),
                       ),
                     ),
@@ -143,6 +152,49 @@ class InitialWidget extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildFancyTextField({
+    required String label,
+    required IconData icon,
+    required TextEditingController controller,
+    TextInputType keyboardType = TextInputType.text,
+    int? maxLength,
+  }) {
+    return TextField(
+      controller: controller,
+      keyboardType: keyboardType,
+      maxLength: maxLength,
+      cursorColor: Colors.purple,
+      style: GoogleFonts.poppins(fontSize: 16),
+      decoration: InputDecoration(
+        labelText: label,
+        labelStyle: GoogleFonts.poppins(color: Colors.purple.shade400),
+        prefixIcon: Icon(icon, color: Colors.purple),
+        filled: true,
+        fillColor: Colors.purple.shade50.withOpacity(0.6),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: BorderSide.none,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide:
+              const BorderSide(color: Colors.purple, width: 2),
+        ),
+        counterText: "",
+      ),
+    );
+  }
+
+  void _showSnack(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message, style: GoogleFonts.poppins()),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.redAccent,
       ),
     );
   }
