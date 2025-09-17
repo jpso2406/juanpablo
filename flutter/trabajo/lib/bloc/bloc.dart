@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 abstract class FormEvent {}
 
 class GuardarFormulario extends FormEvent {
-  final String cedula; // usamos 'cedula' como contraseña
+  final String cedula; // contraseña
   final String nombre;
 
   GuardarFormulario({required this.cedula, required this.nombre});
